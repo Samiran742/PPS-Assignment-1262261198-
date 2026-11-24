@@ -1,3 +1,5 @@
+//Write a C program to accept student details and display their result using array of structures.
+
 
 #include <stdio.h>
 
