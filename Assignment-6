@@ -1,3 +1,5 @@
+//Write a C function to comput and without recursion.
+
 
 #include <stdio.h>
 
