@@ -1,0 +1,46 @@
+// Write a C program to copy contents of one file to another using File handling.
+
+
+#include <stdio.h>
+
+int main()
+{
+    FILE *source, *target;
+    char sourceFile[100], targetFile[100];
+    int ch;
+
+    printf("Enter source file name: ");
+    scanf("%99s", sourceFile);
+
+    printf("Enter destination file name: ");
+    scanf("%99s", targetFile);
+
+    source = fopen(sourceFile, "r");
+
+    if(source == NULL)
+    {
+        printf("Unable to open source file!");
+        return 1;
+    }
+
+    target = fopen(targetFile, "w");
+
+    if(target == NULL)
+    {
+        printf("Unable to create destination file!");
+        fclose(source);
+        return 1;
+    }
+
+    while((ch = fgetc(source)) != EOF)
+    {
+        fputc(ch, target);
+    }
+
+    printf("\nFile copied successfully!");
+
+    fclose(source);
+    fclose(target);
+
+    return 0;
+}
